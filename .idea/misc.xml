@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="UnattendedHostPersistenceState">
+    <option name="openedFilesInfos">
+      <list>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="168" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/uprobe/uprobe.c" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="0" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/uprobe/bpf_bpfel_x86.go" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="12" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/http_server/server.go" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="1069" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/uprobe/main.go" />
+        </OpenedFileInfo>
+      </list>
+    </option>
+  </component>
+</project>

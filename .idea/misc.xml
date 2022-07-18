@@ -4,20 +4,20 @@
     <option name="openedFilesInfos">
       <list>
         <OpenedFileInfo>
-          <option name="caretOffset" value="168" />
+          <option name="caretOffset" value="884" />
           <option name="fileUrl" value="file://$PROJECT_DIR$/uprobe/uprobe.c" />
         </OpenedFileInfo>
         <OpenedFileInfo>
-          <option name="caretOffset" value="0" />
-          <option name="fileUrl" value="file://$PROJECT_DIR$/uprobe/bpf_bpfel_x86.go" />
-        </OpenedFileInfo>
-        <OpenedFileInfo>
-          <option name="caretOffset" value="12" />
-          <option name="fileUrl" value="file://$PROJECT_DIR$/http_server/server.go" />
-        </OpenedFileInfo>
-        <OpenedFileInfo>
-          <option name="caretOffset" value="1069" />
+          <option name="caretOffset" value="1683" />
           <option name="fileUrl" value="file://$PROJECT_DIR$/uprobe/main.go" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="0" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/go.mod" />
+        </OpenedFileInfo>
+        <OpenedFileInfo>
+          <option name="caretOffset" value="589" />
+          <option name="fileUrl" value="file://$PROJECT_DIR$/uprobe/bpf_bpfel_x86.go" />
         </OpenedFileInfo>
       </list>
     </option>

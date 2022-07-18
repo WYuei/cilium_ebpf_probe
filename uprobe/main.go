@@ -32,6 +32,7 @@ const (
 	binPath = "../http_server/http_server"
 	symbol  = "net/http.(*response).finishRequest"
 )
+const mapKey uint32 = 0
 
 func main() {
 	stopper := make(chan os.Signal, 1)
@@ -57,7 +58,7 @@ func main() {
 
 	// Open a Uretprobe at the exit point of the symbol and attach
 	// the pre-compiled eBPF program to it.
-	up, err := ex.Uprobe(symbol, objs.UprobeHttpMain, nil)
+	up, err := ex.Uprobe(symbol, objs.UprobeAhttpMain, nil)
 	if err != nil {
 		log.Fatalf("creating uprobe: %s", err)
 	}
@@ -109,5 +110,11 @@ func main() {
 
 		log.Printf("%s:%s return value: ", binPath, symbol)
 		log.Printf(string(event.Pid))
+
+		var value uint64
+		if err := objs.UprobeMap.Lookup(mapKey, &value); err != nil {
+			log.Fatalf("reading map: %v", err)
+		}
+		log.Printf("called %d times\n", value)
 	}
 }

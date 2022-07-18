@@ -56,14 +56,15 @@ type bpfSpecs struct {
 //
 // It can be passed ebpf.CollectionSpec.Assign.
 type bpfProgramSpecs struct {
-	UprobeHttpMain *ebpf.ProgramSpec `ebpf:"uprobe_http_main"`
+	UprobeAhttpMain *ebpf.ProgramSpec `ebpf:"uprobe_ahttp_main"`
 }
 
 // bpfMapSpecs contains maps before they are loaded into the kernel.
 //
 // It can be passed ebpf.CollectionSpec.Assign.
 type bpfMapSpecs struct {
-	Events *ebpf.MapSpec `ebpf:"events"`
+	Events    *ebpf.MapSpec `ebpf:"events"`
+	UprobeMap *ebpf.MapSpec `ebpf:"uprobe_map"`
 }
 
 // bpfObjects contains all objects after they have been loaded into the kernel.
@@ -85,12 +86,14 @@ func (o *bpfObjects) Close() error {
 //
 // It can be passed to loadBpfObjects or ebpf.CollectionSpec.LoadAndAssign.
 type bpfMaps struct {
-	Events *ebpf.Map `ebpf:"events"`
+	Events    *ebpf.Map `ebpf:"events"`
+	UprobeMap *ebpf.Map `ebpf:"uprobe_map"`
 }
 
 func (m *bpfMaps) Close() error {
 	return _BpfClose(
 		m.Events,
+		m.UprobeMap,
 	)
 }
 
@@ -98,12 +101,12 @@ func (m *bpfMaps) Close() error {
 //
 // It can be passed to loadBpfObjects or ebpf.CollectionSpec.LoadAndAssign.
 type bpfPrograms struct {
-	UprobeHttpMain *ebpf.Program `ebpf:"uprobe_http_main"`
+	UprobeAhttpMain *ebpf.Program `ebpf:"uprobe_ahttp_main"`
 }
 
 func (p *bpfPrograms) Close() error {
 	return _BpfClose(
-		p.UprobeHttpMain,
+		p.UprobeAhttpMain,
 	)
 }
 
